@@ -3,11 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tw grid and flex</title>
+    <title>Food Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
 </head>
 <body>
-    
+    <nav class="bg-green-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <img src="./download.png" alt="TastyBites Logo" class="h-8 w-8">
+                    <a href="#" class="text-2xl font-bold">TastyBites</a>
+                </div>
+
+                <!-- Menu -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="hover:text-green-300">Home</a>
+                    <a href="#" class="hover:text-green-300">Menu</a>
+                    <a href="#" class="hover:text-green-300">About Us</a>
+                    <a href="#" class="hover:text-green-300">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#" class="block px-4 py-2 text-white hover:bg-green-500">Home</a>
+            <a href="#" class="block px-4 py-2 text-white hover:bg-green-500">Menu</a>
+            <a href="#" class="block px-4 py-2 text-white hover:bg-green-500">About Us</a>
+            <a href="#" class="block px-4 py-2 text-white hover:bg-green-500">Contact</a>
+        </div>
+    </nav>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
